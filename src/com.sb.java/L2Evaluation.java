@@ -7,6 +7,11 @@ import java.util.Optional;
 public class L2Evaluation {
 
     public static void main(String[] args) {
+
+        String sample="abcdeffghiikkjj";
+        //find second repetative character in sample
+        System.out.println("find second repetative character in sample is "+findSecondRepetativeCharacter(sample));
+
          int number = 5;
         //Program to check if a number is prime or not
          System.out.println("Number "+number+" Is prime or not? "+ isPrime(number));
@@ -45,6 +50,18 @@ public class L2Evaluation {
         System.out.println("Number "+number+" is even or odd? "+isEvenOrOdd(number));
 
 
+    }
+
+    private static String findSecondRepetativeCharacter(String sample) {
+        int index = 0;
+        for (int i = 0; i < sample.length()-1; i++) {
+            if (sample.charAt(i) == sample.charAt(index)) {
+                index++;
+            } else {
+                index = 0;
+            }
+        }
+        return sample.charAt(index) + "";
     }
 
     private static String isEvenOrOdd(int number) {
